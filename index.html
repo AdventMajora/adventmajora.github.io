@@ -8,8 +8,7 @@
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <title>Eben's Project Page!</title>
         <style type="text/css">
-            body { background: #1A1A1A;
-            }
+
             .centering {
                 float: none;
                 width: 100%;
@@ -19,7 +18,9 @@
     </head>
     
     <body>
-        <div class="row">
+        <canvas id="myCanvas" height="24" width="24" style="border:1px solid black; display:none;"></canvas>
+        
+        <div class="row" id="rowDiv">
             
             <div class="container-fluid col-md-6 col-md-offset-3">
                 <br>
@@ -36,20 +37,20 @@
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/eben-norvell-419973a4">Eben Norvell</a></td>
-                                        <td><b>eMail:</b> enorvellcloud@gmail.com</td>
+                                        <td><b><font size="2">LinkedIn:</b> <a href="https://www.linkedin.com/in/eben-norvell-419973a4">Eben Norvell</a></font></td>
+                                        <td><b><font size="2">eMail:</b> enorvellcloud@gmail.com</font></td>
                                     </tr>
                                     <tr>
-                                        <td><b>Facebook:</b> <a href="https://www.facebook.com/eben.norvell">Eben Norvell</a></td>
-                                        <td><b>Twitter:</b> <a href="https://twitter.com/AdventMajora">AdventMajora</a></td></td>
+                                        <td><b><font size="2">Facebook:</b> <a href="https://www.facebook.com/eben.norvell">Eben Norvell</a></font></td>
+                                        <td><b><font size="2">Twitter:</b> <a href="https://twitter.com/AdventMajora">AdventMajora</a></font></td>
                                     </tr>
                                     <tr>
-                                        <td><b>Xbox Live:</b> Advent Majora</td>
-                                        <td><b>PSN:</b> enorve</td>
+                                        <td><b><font size="2">Xbox Live:</b> Advent Majora</font></td>
+                                        <td><b><font size="2">PSN:</b> enorve</font></td>
                                     </tr>
                                     <tr>
-                                        <td><b>Steam:</b> AdventMajora</td>
-                                        <td><b>NNID:</b> Advent</td>
+                                        <td><b><font size="2">Steam:</b> AdventMajora</font></td>
+                                        <td><b><font size="2">NNID:</b> Advent</font></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -127,10 +128,48 @@
                 </div>
             </div>    
         </div>
+        
     </body>  
-    
     <script type="text/javascript">
-        var Canvas = document.createElement("canvas");
-        $('body').css({'background-image':"url(" + Canvas.toDataURL("image/png")+ ")" });
+    
+
+        var Canvas = document.getElementById("myCanvas");
+        var ctx = Canvas.getContext("2d");
+        ctx.imageSmoothingEnabled = false;
+        
+        //Canvas.height = JSON.stringify($(window).height());
+		//Canvas.width = JSON.stringify($(window).width());
+        
+        var spriteSheet = new Image();	    //Sheet of sprite images
+        spriteSheet.src = 'assets/compressed.png';
+        var sheetWidth = 192;
+
+        for (var i=0; i<3; i++) {
+            for (var j=0; j<3; j++) {
+                var decide = (Math.floor(Math.random()*2));
+                if (decide == 1) {
+                    ctx.fillStyle = 'black';
+                    ctx.fillRect(i*8,j*8,8,8);
+                }
+                
+            }
+        }
+        
+        
+        
+        ctx.drawImage(spriteSheet, 0,0);
+        
+        //draw a sprite
+        function drawSprite(sprite,x,y) {
+            
+            sX = Math.floor((sprite-1)/(sheetWidth/8))*8;
+            sY = ((sprite-1)%(sheetWidth/8))*8;
+            
+            ctx.drawImage(spriteSheet, sY,sX,8,8,x,y,8,8);
+        }
+        
+        document.getElementById('rowDiv').style.backgroundImage = 'url('+Canvas.toDataURL()+')';
+        //$('body').css({'background-image':"url(" + Canvas.toDataURL("image/png")+ ")" });
     </script>
+    
 </html>
