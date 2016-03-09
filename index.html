@@ -17,8 +17,8 @@
         </style>
     </head>
     
-    <body>
-        <canvas id="myCanvas" height="24" width="24" style="border:1px solid black; display:none;"></canvas>
+    <body id="myBody">
+        <canvas id="myCanvas" height="256" width="256" style="border:1px solid black; display:none;"></canvas>
         
         <div class="row" id="rowDiv">
             
@@ -143,14 +143,34 @@
         var spriteSheet = new Image();	    //Sheet of sprite images
         spriteSheet.src = 'assets/compressed.png';
         var sheetWidth = 192;
-
-        for (var i=0; i<3; i++) {
-            for (var j=0; j<3; j++) {
-                var decide = (Math.floor(Math.random()*2));
-                if (decide == 1) {
-                    ctx.fillStyle = 'black';
-                    ctx.fillRect(i*8,j*8,8,8);
+        
+        var pals = [
+            ['#D8B8F8','#00E8D8'],
+            ['#FCA044','#00E8D8'],
+            ['#F878F8','#E40058'],
+            ['#B8F8B8','#58D854'],
+            ['#F8B800','#9878F8']
+        ];
+        
+        var selPal = Math.floor(Math.random()*pals.length);
+        
+        for (var i=0; i<8; i++) {
+            for (var j=0; j<8; j++) {
+                var decide = (Math.floor(Math.random()*4));
+                
+                if (decide == 0){
+                    ctx.fillStyle = '#1A1A1A'; 
                 }
+                if (decide == 1) {
+                    ctx.fillStyle = pals[selPal][0];
+                } 
+                if (decide == 2){
+                    ctx.fillStyle = pals[selPal][1];
+                }
+                if (decide == 3){
+                    ctx.fillStyle = '#F1F1F1';
+                }
+                ctx.fillRect(i*32,j*32,32,32); 
                 
             }
         }
@@ -168,7 +188,7 @@
             ctx.drawImage(spriteSheet, sY,sX,8,8,x,y,8,8);
         }
         
-        document.getElementById('rowDiv').style.backgroundImage = 'url('+Canvas.toDataURL()+')';
+        document.getElementById('myBody').style.backgroundImage = 'url('+Canvas.toDataURL()+')';
         //$('body').css({'background-image':"url(" + Canvas.toDataURL("image/png")+ ")" });
     </script>
     
