@@ -146,6 +146,8 @@
         var ctx = Canvas.getContext("2d");
         ctx.imageSmoothingEnabled = false;
         
+        var cSize = 512;
+        
         var pals = [
             ['#D8B8F8','#00E8D8'],
             ['#FCA044','#00E8D8'],
@@ -156,8 +158,11 @@
         
         var selPal = Math.floor(Math.random()*pals.length);
         
-        for (var i=0; i<8; i++) {
-            for (var j=0; j<8; j++) {
+        var scale = Math.floor(Math.random()*4)+1;
+        scale = scale*8;
+        
+        for (var i=0; i<scale; i++) {
+            for (var j=0; j<scale; j++) {
                 var decide = (Math.floor(Math.random()*4));
                 
                 if (decide == 0){
@@ -172,7 +177,7 @@
                 if (decide == 3){
                     ctx.fillStyle = '#F1F1F1';
                 }
-                ctx.fillRect(i*64,j*64,64,64); 
+                ctx.fillRect(i*(cSize/scale),j*(cSize/scale),(cSize/scale),(cSize/scale)); 
                 
             }
         }
