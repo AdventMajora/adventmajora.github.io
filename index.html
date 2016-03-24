@@ -42,6 +42,9 @@
                                         <td style="padding: 2px"><b><font size="2">eMail:</b> enorvellcloud@gmail.com</font></td>
                                     </tr>
                                     <tr>
+                                        <td style="padding: 2px"><b><font size="2">Github:</b> <a href="https://github.com/adventmajora">AdventMajora</a></font></td>
+                                    </tr>
+                                    <tr>
                                         <td style="padding: 2px"><b><font size="2">Facebook:</b> <a href="https://www.facebook.com/eben.norvell">Eben Norvell</a></font></td>
                                         <td style="padding: 2px"><b><font size="2">Twitter:</b> <a href="https://twitter.com/AdventMajora">AdventMajora</a></font></td>
                                     </tr>
@@ -53,6 +56,7 @@
                                         <td style="padding: 2px"><b><font size="2">Steam:</b> AdventMajora</font></td>
                                         <td style="padding: 2px"><b><font size="2">NNID:</b> Advent</font></td>
                                     </tr>
+                                    
                                 </tbody>
                             </table>
                         </address>
@@ -158,32 +162,75 @@
         
         var selPal = Math.floor(Math.random()*pals.length);
         
-        var scale = Math.floor(Math.random()*4)+1;
-        scale = scale*8;
+        var dir = 1;
+        var scale = 1;
+		var colorScale = 1;
+		var colorDir = 1;
         
-        for (var i=0; i<scale; i++) {
-            for (var j=0; j<scale; j++) {
-                var decide = (Math.floor(Math.random()*4));
-                
-                if (decide == 0){
-                    ctx.fillStyle = '#1A1A1A'; 
-                }
-                if (decide == 1) {
-                    ctx.fillStyle = pals[selPal][0];
-                } 
-                if (decide == 2){
-                    ctx.fillStyle = pals[selPal][1];
-                }
-                if (decide == 3){
-                    ctx.fillStyle = '#F1F1F1';
-                }
-                ctx.fillRect(i*(cSize/scale),j*(cSize/scale),(cSize/scale),(cSize/scale)); 
-                
-            }
-        }
+		/*setInterval(function(){
+			render();
+		}, 125);*/
+		
+		render();
+		
+		
+		function render() {
+			
+			scale+=dir;
+			colorScale+=colorDir;
+			if (scale > 20) {
+				scale = 20;
+				//dir = -1;
+			}
+			if (colorScale > 15) {
+				colorDir = -1;
+			}
+			if (colorScale < 8) {
+				colorDir = 1;
+			}
+			console.log(colorScale);
+			for (var i=0; i<scale; i++) {
+				for (var j=0; j<scale; j++) {
+					var decide = (Math.floor(Math.random()*8));
+					
+					if (decide == 0){
+						ctx.fillStyle = '#1A1A1A';
+					}
+					if (decide == 1 || decide == 2 || decide == 3) {
+						if (colorScale < 5) {
+							ctx.fillStyle = '#1A1A1A';
+						} else {
+							ctx.fillStyle = pals[selPal][0];
+						}
+					} 
+					if (decide == 4 || decide == 5){
+						if (colorScale < 10) {
+							ctx.fillStyle = '#1A1A1A';
+						} else {
+							ctx.fillStyle = pals[selPal][1];
+						}
+					}
+					/*if (decide == 6 || decide == 7){
+						if (colorScale < 15) {
+							ctx.fillStyle = '#1A1A1A';
+						} else {
+							ctx.fillStyle = '#F1F1F1';
+						}
+					}*/
+					ctx.fillRect(i*(cSize/scale),j*(cSize/scale),(cSize/scale),(cSize/scale)); 
+					
+				}
+			}
+			
+			document.getElementById('myBody').style.backgroundImage = 'url('+Canvas.toDataURL()+')';
+			document.getElementById('myBody').style.backgroundAttachment = 'fixed';
+			if (scale < 20) {
+				window.requestAnimationFrame(render);
+			}
+			
+		}
+		
         
-        document.getElementById('myBody').style.backgroundImage = 'url('+Canvas.toDataURL()+')';
-        document.getElementById('myBody').style.backgroundAttachment = 'fixed';
     </script>
     
 </html>
