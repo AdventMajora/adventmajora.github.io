@@ -8,13 +8,29 @@
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <title>Eben's Project Page!</title>
         <style type="text/css">
-        
+		
+			#grad {
+				background: linear-gradient(200deg, #fca044, #00e8d8, #fca044);
+				background-size: 600% 600%;
+
+				-webkit-animation: grad_back 30s ease infinite;
+				animation: grad_back 30s ease infinite;
+			}
+
+			@-webkit-keyframes grad_back {
+				0%{background-position:0% 50%}
+				50%{background-position:100% 50%}
+				100%{background-position:0% 50%}
+			}
+			@keyframes grad_back { 
+				0%{background-position:0% 50%}
+				50%{background-position:100% 50%}
+				100%{background-position:0% 50%}
+			}
         </style>
     </head>
     
-    <body id="myBody">
-        <canvas id="myCanvas" height="512" width="512" style="border:1px solid black; display:none;"></canvas>
-        
+    <body id="grad">
         <div class="row-fluid">
             <div class="container-fluid col-md-6 col-md-offset-3" style="min-width: 200px">
                 
@@ -58,9 +74,7 @@
                                 </tbody>
                             </table>
                         </address>
-                        
-                        <br>
-                        
+                        <br>                      
                         <div class="panel panel-primary" style="border-color: #1A1A1A">
                             <div class="panel-heading" style="background-image: none; background-color: #6C6C6C;  border-bottom: none;">
                                 <a data-toggle="collapse" href="#collapse2">
@@ -277,95 +291,22 @@
                 </div>
             </div>    
         </div>
-        
-    </body>  
-    <script type="text/javascript">
-
-        var Canvas = document.getElementById("myCanvas");
-        var ctx = Canvas.getContext("2d");
-        ctx.imageSmoothingEnabled = false;
-        
-        var cSize = 512;
-        
-        var pals = [
-            ['#D8B8F8','#00E8D8'],
-            ['#FCA044','#00E8D8'],
-            ['#F878F8','#E40058'],
-            ['#B8F8B8','#58D854'],
-            ['#F8B800','#9878F8']
-        ];
-        
-        var selPal = Math.floor(Math.random()*pals.length);
-        
-        var dir = .1;
-        var scale = 10;
-		var colorScale = 11;
-		var colorDir = 1;
-        
-		/*setInterval(function(){
-			render();
-		}, 125);*/
+    </body>
+	<script>
+		var pals = [
+			["#D8B8F8","#00E8D8"],
+			["#FCA044","#00E8D8"],
+			["#F8B800","#9878F8"],
+			["#A81000","#F8B800"],
+			["#F87858","#3CBCFC"],
+			["#58D854","#F878F8"],
+			["#3CBCFC","#58D854"]
+		];
 		
-		render();
+		var curr_pal = Math.floor(Math.random()*pals.length);
+		console.log(curr_pal);
+		document.getElementById("grad").style.background = "linear-gradient(200deg, "+pals[curr_pal][0]+","+pals[curr_pal][1]+")";
+		document.getElementById("grad").style.backgroundSize = "400% 400%"
 		
-		
-		function render() {
-			
-			scale+=dir;
-			colorScale+=colorDir;
-			if (scale > 10) {
-				scale = 10;
-				//dir = -1;
-			}
-			if (colorScale > 15) {
-				colorDir = -1;
-			}
-			if (colorScale < 8) {
-				colorDir = 1;
-			}
-			console.log(colorScale);
-			for (var i=0; i<scale; i++) {
-				for (var j=0; j<scale; j++) {
-					var decide = (Math.floor(Math.random()*8));
-					
-					if (decide == 0){
-						ctx.fillStyle = '#1A1A1A';
-					}
-					if (decide == 1 || decide == 2 || decide == 3) {
-						if (colorScale < 5) {
-							ctx.fillStyle = '#1A1A1A';
-						} else {
-							ctx.fillStyle = pals[selPal][0];
-						}
-					} 
-					if (decide == 4 || decide == 5){
-						if (colorScale < 10) {
-							ctx.fillStyle = '#1A1A1A';
-						} else {
-							ctx.fillStyle = pals[selPal][1];
-						}
-					}
-					/*if (decide == 6 || decide == 7){
-						if (colorScale < 15) {
-							ctx.fillStyle = '#1A1A1A';
-						} else {
-							ctx.fillStyle = '#F1F1F1';
-						}
-					}*/
-					ctx.fillRect(i*(cSize/scale),j*(cSize/scale),(cSize/scale),(cSize/scale)); 
-					
-				}
-			}
-			
-			document.getElementById('myBody').style.backgroundImage = 'url('+Canvas.toDataURL()+')';
-			document.getElementById('myBody').style.backgroundAttachment = 'fixed';
-			if (scale < 10) {
-				//window.requestAnimationFrame(render);
-			}
-			
-		}
-		
-        
-    </script>
-    
+	</script>
 </html>
