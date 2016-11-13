@@ -38,7 +38,7 @@
                                 <tbody>
                                     <tr>
                                         <td style="padding: 2px"><b><font size="2">LinkedIn:</b> <a href="https://www.linkedin.com/in/eben-norvell-419973a4">Eben Norvell</a></font></td>
-                                        <td style="padding: 2px"><b><font size="2">eMail:</b> enorvellcloud@gmail.com</font></td>
+                                        <td style="padding: 2px"><b><font size="2">Email:   </b> enorvellcloud@gmail.com</font></td>
                                     </tr>
                                     <tr>
                                         <td style="padding: 2px"><b><font size="2">Github:</b> <a href="https://github.com/adventmajora">AdventMajora</a></font></td>
@@ -73,20 +73,22 @@
                                 <div class="panel-body" style="background-image: none; background-color: #F1F1F1">
                                     <ul class="list-group">
                                         <li class="list-group-item">
-                                            <font size="4"><strong>Meijer</strong></font> <i>Jun 2012 - Jul 2012</i>
-                                            <br><b>Job:</b> Utility Worker
+                                            <font size="4"><strong>Meijer</strong></font>
+                                            <br><b>Job:</b> Utility Worker <i>Jun 2012 - Jul 2012</i>
                                         </li>
                                         <li class="list-group-item">
-                                            <font size="4"><strong>GE Appliances</strong></font> <i>Jan 2014 - Apr 2014, Aug 2014 - Dec 2014</i>
-                                            <br><b>Job:</b> ITEP, ITLP EID
+                                            <font size="4"><strong>GE Appliances</strong></font>
+                                            <br><b>Internship:</b> ITEP <i>Jan 2014 - Apr 2014</i> 
+											<br><b>Internship:</b> ITLP EID <i>Aug 2014 - Dec 2014</i>
                                         </li>
                                         <li class="list-group-item">
-                                            <font size="4"><strong>University of Louisville</strong></font> <i>Oct 2015 - May 2016</i>
-                                            <br><b>Job:</b> Help Desk Technician
+                                            <font size="4"><strong>University of Louisville</strong></font> 
+                                            <br><b>Job:</b> Help Desk Technician <i>Oct 2015 - May 2016</i>
+											
                                         </li>
                                         <li class="list-group-item">
-                                            <font size="4"><strong>Brown-Forman</strong></font> <i>April 2015 - Present</i>
-                                            <br><b>Job:</b> Information Security Intern
+                                            <font size="4"><strong>Brown-Forman</strong></font> 
+                                            <br><b>Internship:</b> Information Security Intern <i>April 2015 - Present</i>
                                         </li>
                                     </ul>
                                 </div>
@@ -104,6 +106,16 @@
                             <div id="collapse3" class="panel-collapse collapse">
                                 <div class="panel-body" style="background-image: none; background-color: #F1F1F1">
                                     <ul class="list-group">
+										<li class="list-group-item">
+											<font size="4"><strong>Psuedo 3D</strong></font> <i>May 2016</i>
+											<br>A small 3D environment made using only 2D sprite. Each "object" in the scene is a series of sprites that are "slices" of a 3D object. When rendered, each of these slices is drawn at an offset form the last, creating a 3D effect.
+											<br><img src="assets/p3D.png" style="max-width:100%; max-height:100%;">
+										</li>
+										<li class="list-group-item">
+											<font size="4"><strong>Terrain Generator</strong></font> <i>May 2016</i>
+											<br>A small experiment with terrain generation. Different types of terrain (different colors) grow in different patterns. The terrain is "grown" out over a series of iterations of applying each terrains pattern.
+											<br><img src="assets/terrain.png" style="max-width:100%; max-height:100%;">
+										</li>
 										<li class="list-group-item">
 											<font size="4"><strong>Stage Fight</strong></font> <i>Mar 2016 - Apr 2016</i>
 											<br>A multiplayer arcade game where two players try an knock each other off of their respective stages while avoiding obstacles. Made in Unity, this game features 2D characters acting in a 3D environment. I developed this game with <a href="https://www.linkedin.com/in/benjamin-brown-322851a6?authType=NAME_SEARCH&authToken=7yqO&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A378330506%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1461763961300%2Ctas%3Aben" target="_blank">Ben Brown</a>, and <a href="https://www.linkedin.com/in/scnwosu?trk=miniprofile-name-link" target="_blank">Sam Nwosu</a>. All assets are original with the exception of a crowd cheering sound effect, and the font used for the count-down clock.
@@ -284,9 +296,9 @@
         
         var selPal = Math.floor(Math.random()*pals.length);
         
-        var dir = 1;
-        var scale = 1;
-		var colorScale = 1;
+        var dir = .1;
+        var scale = 10;
+		var colorScale = 11;
 		var colorDir = 1;
         
 		/*setInterval(function(){
@@ -300,8 +312,8 @@
 			
 			scale+=dir;
 			colorScale+=colorDir;
-			if (scale > 20) {
-				scale = 20;
+			if (scale > 10) {
+				scale = 10;
 				//dir = -1;
 			}
 			if (colorScale > 15) {
@@ -346,8 +358,8 @@
 			
 			document.getElementById('myBody').style.backgroundImage = 'url('+Canvas.toDataURL()+')';
 			document.getElementById('myBody').style.backgroundAttachment = 'fixed';
-			if (scale < 20) {
-				window.requestAnimationFrame(render);
+			if (scale < 10) {
+				//window.requestAnimationFrame(render);
 			}
 			
 		}
