@@ -10,119 +10,120 @@
         <style type="text/css">
 		
 			#grad {
-				background: linear-gradient(200deg, #fca044, #00e8d8, #fca044);
-				background-size: 600% 600%;
-
-				-webkit-animation: grad_back 30s ease infinite;
-				animation: grad_back 30s ease infinite;
+				background-image: url(assets/compressed_trans.PNG), linear-gradient(200deg, #fca044, #00e8d8, #fca044);
+				background-size: 100% 100%, 600% 600%;
+				animation: grad_back 15s ease infinite;
 			}
 
-			@-webkit-keyframes grad_back {
-				0%{background-position:0% 50%}
-				50%{background-position:100% 50%}
-				100%{background-position:0% 50%}
-			}
+			
 			@keyframes grad_back { 
-				0%{background-position:0% 50%}
-				50%{background-position:100% 50%}
-				100%{background-position:0% 50%}
+				0%{background-position:0% 0%, 0% 50%}
+				50%{background-position:0% 0%, 100% 50%}
+				100%{background-position:0% 0%, 0% 50%}
+			}
+			
+			.overlay {
+				background-image: url(assets/compressed_trans.PNG);
+				background-size: 100% 100%;
+				background-position: top;
 			}
         </style>
     </head>
     
     <body id="grad">
-        <div class="row-fluid">
-            <div class="container-fluid col-md-6 col-md-offset-3" style="min-width: 200px">
-                
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                
-                <div class="panel panel-primary" style="border-color: #1A1A1A; " >
-                    <div class="panel-heading" style="background-image: none; background-color: #1A1A1A; border-bottom: none;">
-                        <h6 class="panel-title">
-                            <br><font size="6"><strong>Eben T. Norvell</strong></font>
-                        </h6>
-                    </div>
-                    
-                    <div class="panel-body" style="background-image: none; background-color: #F1F1F1">
-                        I guess I should put some stuff here, right?
-                        <address>
-                            <table cellpadding="2">
-                                <tbody>
-                                    <tr>
-                                        <td style="padding: 2px"><b><font size="2">LinkedIn:</b> <a href="https://www.linkedin.com/in/eben-norvell-419973a4">Eben Norvell</a></font></td>
-                                        <td style="padding: 2px"><b><font size="2">Email:   </b> enorvellcloud@gmail.com</font></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 2px"><b><font size="2">Github:</b> <a href="https://github.com/adventmajora">AdventMajora</a></font></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 2px"><b><font size="2">Facebook:</b> <a href="https://www.facebook.com/eben.norvell">Eben Norvell</a></font></td>
-                                        <td style="padding: 2px"><b><font size="2">Twitter:</b> <a href="https://twitter.com/AdventMajora">AdventMajora</a></font></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 2px"><b><font size="2">Xbox Live:</b> Advent Majora</font></td>
-                                        <td style="padding: 2px"><b><font size="2">PSN:</b> enorve</font></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 2px"><b><font size="2">Steam:</b> AdventMajora</font></td>
-                                        <td style="padding: 2px"><b><font size="2">NNID:</b> Advent</font></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </address>
-                        <br>                      
-                        <div class="panel panel-primary" style="border-color: #1A1A1A">
-                            <div class="panel-heading" style="background-image: none; background-color: #6C6C6C;  border-bottom: none;">
-                                <a data-toggle="collapse" href="#collapse2">
-                                    <h4 class="panel-title">
-                                        <font color="white" size="6">Work Experience</font>
-                                    </h4>
-                                </a>
-                            </div>
-                            <div id="collapse2" class="panel-collapse collapse">
-                                <div class="panel-body" style="background-image: none; background-color: #F1F1F1">
-                                    <ul class="list-group">
-                                        <li class="list-group-item">
-                                            <font size="4"><strong>Meijer</strong></font>
-                                            <br><b>Job:</b> Utility Worker <i>Jun 2012 - Jul 2012</i>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <font size="4"><strong>GE Appliances</strong></font>
-                                            <br><b>Internship:</b> ITEP <i>Jan 2014 - Apr 2014</i> 
+		
+		<div class="row-fluid">
+			<div class="container-fluid col-md-6 col-md-offset-3" style="min-width: 200px">
+				
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				
+				<div class="panel panel-primary" style="border-color: #1A1A1A; " >
+					<div class="panel-heading" style="background-image: none; background-color: #1A1A1A; border-bottom: none;">
+						<h6 class="panel-title">
+							<br><font size="6"><strong>Eben T. Norvell</strong></font>
+						</h6>
+					</div>
+					
+					<div class="panel-body" style="background-image: none; background-color: #F1F1F1">
+						I guess I should put some stuff here, right?
+						<address>
+							<table cellpadding="2">
+								<tbody>
+									<tr>
+										<td style="padding: 2px"><b><font size="2">LinkedIn:</b> <a href="https://www.linkedin.com/in/eben-norvell-419973a4">Eben Norvell</a></font></td>
+										<td style="padding: 2px"><b><font size="2">Email:   </b> enorvellcloud@gmail.com</font></td>
+									</tr>
+									<tr>
+										<td style="padding: 2px"><b><font size="2">Github:</b> <a href="https://github.com/adventmajora">AdventMajora</a></font></td>
+									</tr>
+									<tr>
+										<td style="padding: 2px"><b><font size="2">Facebook:</b> <a href="https://www.facebook.com/eben.norvell">Eben Norvell</a></font></td>
+										<td style="padding: 2px"><b><font size="2">Twitter:</b> <a href="https://twitter.com/AdventMajora">AdventMajora</a></font></td>
+									</tr>
+									<tr>
+										<td style="padding: 2px"><b><font size="2">Xbox Live:</b> Advent Majora</font></td>
+										<td style="padding: 2px"><b><font size="2">PSN:</b> enorve</font></td>
+									</tr>
+									<tr>
+										<td style="padding: 2px"><b><font size="2">Steam:</b> AdventMajora</font></td>
+										<td style="padding: 2px"><b><font size="2">NNID:</b> Advent</font></td>
+									</tr>
+								</tbody>
+							</table>
+						</address>
+						<br>                      
+						<div class="panel panel-primary" style="border-color: #1A1A1A">
+							<div class="panel-heading" style="background-image: none; background-color: #6C6C6C;  border-bottom: none;">
+								<a data-toggle="collapse" href="#collapse2">
+									<h4 class="panel-title">
+										<font color="white" size="6">Work Experience</font>
+									</h4>
+								</a>
+							</div>
+							<div id="collapse2" class="panel-collapse collapse">
+								<div class="panel-body" style="background-image: none; background-color: #F1F1F1">
+									<ul class="list-group">
+										<li class="list-group-item">
+											<font size="4"><strong>Meijer</strong></font>
+											<br><b>Job:</b> Utility Worker <i>Jun 2012 - Jul 2012</i>
+										</li>
+										<li class="list-group-item">
+											<font size="4"><strong>GE Appliances</strong></font>
+											<br><b>Internship:</b> ITEP <i>Jan 2014 - Apr 2014</i> 
 											<br><b>Internship:</b> ITLP EID <i>Aug 2014 - Dec 2014</i>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <font size="4"><strong>University of Louisville</strong></font> 
-                                            <br><b>Job:</b> Help Desk Technician <i>Oct 2015 - May 2016</i>
+										</li>
+										<li class="list-group-item">
+											<font size="4"><strong>University of Louisville</strong></font> 
+											<br><b>Job:</b> Help Desk Technician <i>Oct 2015 - May 2016</i>
 											
-                                        </li>
-                                        <li class="list-group-item">
-                                            <font size="4"><strong>Brown-Forman</strong></font> 
-                                            <br><b>Internship:</b> Information Security Intern <i>April 2015 - Present</i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>                
-                        </div>
-                        
-                        <div class="panel panel-primary" style="border-color: #1A1A1A">
-                            <div class="panel-heading" style="background-image: none; background-color: #6C6C6C;  border-bottom: none;">
-                                <a data-toggle="collapse" href="#collapse3">
-                                    <h4 class="panel-title">
-                                        <font color="white" size="6">Projects</font>
-                                    </h4>
-                                </a>
-                            </div>
-                            <div id="collapse3" class="panel-collapse collapse">
-                                <div class="panel-body" style="background-image: none; background-color: #F1F1F1">
-                                    <ul class="list-group">
+										</li>
+										<li class="list-group-item">
+											<font size="4"><strong>Brown-Forman</strong></font> 
+											<br><b>Internship:</b> Information Security Intern <i>April 2015 - Present</i>
+										</li>
+									</ul>
+								</div>
+							</div>                
+						</div>
+						
+						<div class="panel panel-primary" style="border-color: #1A1A1A">
+							<div class="panel-heading" style="background-image: none; background-color: #6C6C6C;  border-bottom: none;">
+								<a data-toggle="collapse" href="#collapse3">
+									<h4 class="panel-title">
+										<font color="white" size="6">Projects</font>
+									</h4>
+								</a>
+							</div>
+							<div id="collapse3" class="panel-collapse collapse">
+								<div class="panel-body" style="background-image: none; background-color: #F1F1F1">
+									<ul class="list-group">
 										<li class="list-group-item">
 											<font size="4"><strong>Psuedo 3D</strong></font> <i>Nov 2016</i>
-											<br>A small 3D environment made using only 2D sprite. Each "object" in the scene is a series of sprites that are "slices" of a 3D object. When rendered, each of these slices is drawn at an offset form the last, creating a 3D effect.
+											<br>A small 3D environment made using only 2D sprites. Each "object" in the scene is a series of sprites that are "slices" of a 3D object. When rendered, each of these slices is drawn at an offset form the last, creating a 3D effect.
 											<br><img src="assets/p3D.PNG" style="max-width:100%; max-height:100%;">
 											<br>Demo found <a href="http://ebentnorvell.com/dungeon_3d/" target="_blank">here!</a>
 										</li>
@@ -184,10 +185,10 @@
 												</a>
 											</div>
 										</li>
-                                        <li class="list-group-item">
-                                            <font size="4"><strong>Dungeon JS</strong></font> <i>Jan 2016 - Ongoing</i>
-                                            <br>A randomly generated dungeon crawler with stacking (and visual!) powerups. The player fights their way through generated levels to find keys and powerups. I wrote this in Javascript. All art and music is original.
-                                            <br>
+										<li class="list-group-item">
+											<font size="4"><strong>Dungeon JS</strong></font> <i>Jan 2016 - Ongoing</i>
+											<br>A randomly generated dungeon crawler with stacking (and visual!) powerups. The player fights their way through generated levels to find keys and powerups. I wrote this in Javascript. All art and music is original.
+											<br>
 											<div id="dungeonCarousel" class="carousel slide" data-ride="carousel">
 												<!-- Indicators -->
 												<ol class="carousel-indicators">
@@ -226,18 +227,18 @@
 													<span class="sr-only">Next</span>
 												</a>
 											</div>
-                                            <br>Click <a href="http://ebentnorvell.com/dungeon/" target="_blank">the demo</a> for a good time!
-                                            
-                                        </li>
-                                        <li class="list-group-item">
-                                            <font size="4"><strong>CANTSTOP</strong></font> <i>Jan 2016</i>
-                                            <br>A one button runner/platformer with wonky (but fun!) jump physics. My first Unity game as part of a Game Design class. All assets are original.
-                                            <br><img src="assets/cantstopPic.PNG" style="max-width:100%; max-height:100%;">
-                                        </li>
-                                        <li class="list-group-item">
-                                            <font size="4"><strong>Procedurally Generated Dungeon Game</strong></font> <i>2014</i>
-                                            <br>A dungeon crawler that is generated as the player explores. I wrote this in Java using the Slick2D framework. Progress on this has ceased to make room for other projects and responsibilities. All assets are original.
-                                            <br>
+											<br>Click <a href="http://ebentnorvell.com/dungeon/" target="_blank">the demo</a> for a good time!
+											
+										</li>
+										<li class="list-group-item">
+											<font size="4"><strong>CANTSTOP</strong></font> <i>Jan 2016</i>
+											<br>A one button runner/platformer with wonky (but fun!) jump physics. My first Unity game as part of a Game Design class. All assets are original.
+											<br><img src="assets/cantstopPic.PNG" style="max-width:100%; max-height:100%;">
+										</li>
+										<li class="list-group-item">
+											<font size="4"><strong>Procedurally Generated Dungeon Game</strong></font> <i>2014</i>
+											<br>A dungeon crawler that is generated as the player explores. I wrote this in Java using the Slick2D framework. Progress on this has ceased to make room for other projects and responsibilities. All assets are original.
+											<br>
 											<div id="genCarousel" class="carousel slide" data-ride="carousel">
 												<!-- Indicators -->
 												<ol class="carousel-indicators">
@@ -277,27 +278,28 @@
 													<span class="sr-only">Next</span>
 												</a>
 											</div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <font size="4"><strong>Separate Ways</strong></font> <i>2012</i>
-                                            <br>A Halo Reach multiplayer map made using using Halo Reach's Forge for playing Jump pack Grifball. The map was rolled into Matchmaking in 2012 with the debut of the Jump Pack Grifball gametype. This was a team effort between myself and AlmightyBeowulf.
-                                            <br><img src="assets/SeparateLow.jpg" style="max-width:100%; max-height:100%;">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>                
-                        </div>
-                    </div>           
-                </div>
-            </div>    
-        </div>
-    </body>
+										</li>
+										<li class="list-group-item">
+											<font size="4"><strong>Separate Ways</strong></font> <i>2012</i>
+											<br>A Halo Reach multiplayer map made using using Halo Reach's Forge for playing Jump pack Grifball. The map was rolled into Matchmaking in 2012 with the debut of the Jump Pack Grifball gametype. This was a team effort between myself and AlmightyBeowulf.
+											<br><img src="assets/SeparateLow.jpg" style="max-width:100%; max-height:100%;">
+										</li>
+									</ul>
+								</div>
+							</div>                
+						</div>
+					</div>           
+				</div>
+			</div>    
+		</div>
+
+	</body>
 	<script>
 		var pals = [
 			["#D8B8F8","#00E8D8"],
 			["#FCA044","#00E8D8"],
 			["#F8B800","#9878F8"],
-			["#A81000","#F8B800"],
+			["#F85898","#F8B800"],
 			["#F87858","#3CBCFC"],
 			["#58D854","#F878F8"],
 			["#3CBCFC","#58D854"]
@@ -305,8 +307,8 @@
 		
 		var curr_pal = Math.floor(Math.random()*pals.length);
 		console.log(curr_pal);
-		document.getElementById("grad").style.background = "linear-gradient(200deg, "+pals[curr_pal][0]+","+pals[curr_pal][1]+")";
-		document.getElementById("grad").style.backgroundSize = "400% 400%"
+		document.getElementById("grad").style.background = "url(assets/compressed_trans.PNG), linear-gradient(200deg, "+pals[curr_pal][0]+","+pals[curr_pal][1]+","+pals[curr_pal][0]+","+pals[curr_pal][1]+")";
+		document.getElementById("grad").style.backgroundSize = "640px 400px, 800% 800%"
 		
 	</script>
 </html>
