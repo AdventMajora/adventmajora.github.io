@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Elen's Project Page!</title>
         <style type="text/css">
 		
@@ -14,7 +14,6 @@
 				background-size: 100% 100%, 600% 600%;
 				animation: grad_back 15s ease infinite;
 			}
-
 			
 			@keyframes grad_back { 
 				0%{background-position:0% 0%, 0% 50%}
@@ -27,16 +26,22 @@
 			  display: -webkit-flex;
 			  flex-wrap: wrap;
 			}
+
+			.fill-height {
+			    min-height: 100%;
+			    height:auto !important; 
+			    height: 100%; 
+			}
         </style>
     </head>
     
     <body id="grad">
 		<div class="row-fluid">
 			<br>
-			<div class="container-fluid" style="height: 30%;">
+			<div class="container-fluid fill-height">
 				<div class="row equal">
 					<!--col_1 general info, eduaction, work-->
-					<div class="container-fluid col-md-4 col-md-offset-1" style="min-width: 200px">
+					<div class="container-fluid col-md-4 col-md-offset-1" style="min-width: 200px; max-width: 600px;">
 						<div class="panel-group" id="accordion">
 							<!--general info-->
 							<div class="panel panel-primary" style="border-color: #1A1A1A;">
@@ -49,7 +54,7 @@
 								
 								<!--panel body-->
 								<div id="collapse_general" class="panel-collapse collapse in">
-									<div class="panel-body"  style="background-image: none; background-color: #F1F1F1">
+									<div class="panel-body"  style="background-image: none; background-color: #F1F1F1; height:65vh; overflow-y: scroll;">
 										I guess I should put some stuff here, right?
 										<address>
 											<table cellpadding="2">
@@ -76,6 +81,21 @@
 												</tbody>
 											</table>
 										</address>
+										<p>
+											I got my start in game making in Elementary school, when I started designing D&D levels on paper. Even though I never had anyone to actually play my levels with, it never stopped me from coming up with new mechanics to implement, and new levels to design.
+											<br>
+											<br>
+											I picked up GameMaker in Middle School, and taught myself how to make my levels into an actual game. I started by re-skinning and modding the example projects, and ended up making two full games by the time I was done with the 8th grade! Even though I didn't have anything in the name of programming experience at the time, I didn't let that stop me! Some say, the two platformers I made still reside within my middle school’s file system to this day. 
+											<br>
+											<br>
+											It wasn't until my Sophomore year in High School that I took my first programming class. We were taught QBasic and Visual Basic as starter languages. My Senior year, We were taught Object Oriented design with Java. However, during this time, I was less focused with actually programming games, and was instead doing my best to design them! Halo 3 introduced Forge, a basic level editor for the game's multiplayer maps with a focus on picking up and moving objects around. I spent hundreds of hours designing multiplayer levels, and game-types to accompany them (Infection will always be my favorite), while having my friends test and play my creations. When Halo Reach's Forge 2.0 came around, my efforts doubled. With the bounty of new editing tools, making complex and engaging levels became much easier. In 2012, one of my creations made it into global matchmaking. A friend and I were bored with the plain grey arena maps used for the Grifball gametype, and wanted to design a map that focused on aesthetics without compromising consistency and playability. It took around 20 iterations and revisions to get from the original to the final.
+											<br>
+											<br>
+											I graduated from University of Louisville with a Master's degree in Computer Engineering and Computer Science in 2017. During my college career, I grew my skills as a developer and as a designer. I lead the local Game Dev student group for a number of years, as well as worked on personal game projects. I took both game design courses offered, and learned to work in teams (and solo) on projects with hard deadlines.
+											<br>
+											<br>
+											To this day, I still use my time to make games. They will always be the most interesting problems to solve! As I grow my portfolio of projects, I'll be adding them here. Hopefully I can make something cool!
+										</p>
 									</div>
 								</div>
 							</div>
@@ -91,7 +111,7 @@
 								
 								<!--panel body-->
 								<div id="collapse_education" class="panel-collapse collapse">
-									<div class="panel-body" style="background-image: none; background-color: #F1F1F1">
+									<div class="panel-body" style="background-image: none; background-color: #F1F1F1; height: 65vh; overflow-y: scroll;">
 										<ul class="list-group">
 											<li class="list-group-item">
 												<font size="4"><strong>Master's Degree</strong></font>  <i>2017</i>
@@ -123,7 +143,7 @@
 								
 								<!--panel body-->
 								<div id="collapse_experience" class="panel-collapse collapse">
-									<div class="panel-body" style="background-image: none; background-color: #F1F1F1">
+									<div class="panel-body" style="background-image: none; background-color: #F1F1F1; height: 65vh; overflow-y: scroll;">
 										<ul class="list-group">
 											<li class="list-group-item">
 												<font size="4"><strong>Brown-Forman</strong></font> 
@@ -152,7 +172,7 @@
 					</div>	
 					
 					<!--col_2 projects-->
-					<div class="container-fluid col-md-6" style="min-width: 200px">
+					<div class="container-fluid col-md-6" style="min-width: 200px; max-width: 600px;">
 						<!--projects-->
 						<div class="panel panel-primary" style="border-color: #1A1A1A;">
 							<!--panel heading-->
@@ -163,7 +183,7 @@
 							</div>
 							
 							<!--panel body-->
-							<div class="panel-body" style="background-image: none; background-color: #F1F1F1; height:580px; overflow-y:scroll;">
+							<div class="panel-body" style="background-image: none; background-color: #F1F1F1; height: 85vh; overflow-y:scroll;">
 								<ul class="list-group">
 									<!--Super Dot Slash-->
 									<li class="list-group-item">
